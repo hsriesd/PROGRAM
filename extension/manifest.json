@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "바부",
+  "version": "1.0",
+  "description": "ㅋㅋㅋ",
+  "permissions": ["tabs", "storage", "activeTab", "commands", "notifications"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "commands": {
+    "toggle-restriction": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X"
+      },
+      "description": "Toggle the restriction on and off"
+    }
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*",
+    "chrome://*/*"
+  ]
+}
